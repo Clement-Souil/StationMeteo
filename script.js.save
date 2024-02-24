@@ -1,0 +1,103 @@
+function ChangerDate(bouton){
+    console.log(bouton)
+    if (bouton=="Demain"){document.getElementById('Dte').innerText  = bouton; document.getElementById('day').innerText  = 1}
+    else if (bouton=="Aujourd'hui"){document.getElementById('Dte').innerText  = bouton; document.getElementById('day').innerText  = 0}
+    else if (bouton=="Hier"){document.getElementById('Dte').innerText  = bouton; document.getElementById('day').innerText  = -1}
+    else {
+        let date1 = new Date()
+        let auj = new Date().getDate()
+        let dateperso = date1.toLocaleString('fr-FR',{
+            weekday: 'short',
+            day: 'numeric',
+            month: 'short',
+            year: '2-digit'});
+        if (bouton=="Suivant"){
+            document.getElementById('day').innerText  = parseInt(document.getElementById('day').innerText) +1
+            var PlusOneDay = new Date(date1.setDate(date1.getDate()+parseInt(document.getElementById('day').innerText)))
+            var DateText = PlusOneDay.toLocaleString('fr-FR',{
+                weekday: 'short',
+                day: 'numeric',
+                month: 'short',
+                year: '2-digit'});
+                if (parseInt(document.getElementById('day').innerText) == 0){document.getElementById('Dte').innerText = "Aujourd'hui | " + DateText}
+                else if (parseInt(document.getElementById('day').innerText)==1){document.getElementById('Dte').innerText = "Demain | " + DateText}
+                else if (parseInt(document.getElementById('day').innerText)==-1){document.getElementById('Dte').innerText = "Hier | " + DateText}
+                else{ document.getElementById('Dte').innerText  = DateText; }
+
+
+        }else{
+            document.getElementById('day').innerText  = parseInt(document.getElementById('day').innerText) -1
+            var PlusOneDay = new Date(date1.setDate(date1.getDate()+parseInt(document.getElementById('day').innerText)))
+            var DateText = PlusOneDay.toLocaleString('fr-FR',{
+                weekday: 'short',
+                day: 'numeric',
+                month: 'short',
+                year: '2-digit'});
+            if (parseInt(document.getElementById('day').innerText) == 0){document.getElementById('Dte').innerText = "Aujourd'hui | " + DateText}
+            else if (parseInt(document.getElementById('day').innerText)==1){document.getElementById('Dte').innerText = "Demain | " + DateText}
+            else if (parseInt(document.getElementById('day').innerText)==-1){document.getElementById('Dte').innerText = "Hier | " + DateText}
+            else{ document.getElementById('Dte').innerText  = DateText; }
+            
+        }
+    }
+}
+
+function ChangerFond(){
+
+    /*alert(document.getElementById('temps').alt)*/
+
+    switch (document.getElementById('temps').alt){ 
+    case 'nuage' :
+        document.body.style.background = "#ACACAC";
+        break;
+    case 'soleil' :
+        document.body.style.background = "#00C4FD";
+        break;
+    case 'orage' :
+        document.body.style.background = "#616161";
+        break;
+    case 'neige' :
+        document.body.style.background = "#FFFFFF";
+        break;
+    case 'pluie' :
+        document.body.style.background = "#1135DA";
+        break;
+    default:
+        console.log("Pas trouvé")
+        document.body.style.background = "white";
+    }
+
+  $('#date').val($jou);
+
+}
+
+function visibilite()
+{
+var targetElement;
+targetElement = document.getElementById('d2') ;
+targetElement2 = document.getElementById("d1") ;
+
+if (targetElement.style.display == "none")
+{
+targetElement.style.display = "" ;
+targetElement2.style.display = "none" ;
+} else {
+targetElement.style.display = "none" ;
+targetElement2.style.display = "" ;
+}
+}
+
+function Temperature(){
+    temp = document.getElementById('temperature').value ;
+    text = document.getElementById("temp").innerHTML ;
+
+    text = temp
+}
+
+function Rechercher(){
+    var input = document.getElementById('lk').value;
+    var date = document.getElementById('date').value;
+    if (input != "" && date != ""){
+        window.location.href="?ville="+input+"&jour="+date;
+    }
+}

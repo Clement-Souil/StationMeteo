@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <script src="js.js"></script>
+    <link rel="icon" href="./Assets/logo.png">
+    <title>Météo</title>
+</head>
+<body onload="ChangerFond()">
+    <header>
+        <table>
+            <tr>
+                <td><a href=""><img src="./Assets/logo.png" alt="Logo météo"></a></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><Button>Rechercher</Button></td>
+                <td><a href="javascript:visibilite();"><button onclick="togg()">Ajouter des données !</button></a></td>
+            </tr>
+        </table>
+    </header>
+    <section id="Actuel">
+        <table>
+            <tr>
+                <td class="test">    
+                    <p id="Lieu">
+                    <h2>PAU</h2> 
+                    <p>Le temps sera particulièrement couvert</p>
+                    </p>
+                </td>
+                <td class="test">
+                    <p>Température <p>12°</p></p>
+                </td>
+                <td class="test">         
+                    <img id="temps" src="./Assets/cloud.png" alt="orage">
+                </td>
+            </tr>
+        </table>
+    </section>
+    <hr>
+    <section id="d1">
+        <p id="selector">
+            <a href="#sql" name="Precedent" onclick="ChangerDate(this.name)">⟵</a>
+            <a href="#sql" name="Hier" onclick="ChangerDate(this.name)">HIER</a>
+            <a href="#sql"  name="Aujourd'hui" onclick="ChangerDate(this.name)">AUJOURD'HUI</a>
+            <a href="#sql" name="Demain" onclick="ChangerDate(this.name)">DEMAIN</a>
+            <a href="#sql" name="Suivant" onclick="ChangerDate(this.name)">⟶</a>
+            <p id="day">0</p>
+        </p>
+        <table id="sql">
+            <thead>
+                <tr>
+                  <th colspan="6" style="align-self: center;"><p id="Dte">Aujourd'hui</p></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td><td>Temperature</td><td>Temps</td><td>Humidité</td><td>UV</td><td>Pression</td>
+                </tr>
+                <tr>
+                    <td>10h00</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section id="d2" style="display:none">
+        <form action="/ma-page-de-traitement" method="post">
+            <ul>
+              <li>
+                <label for="localisation">Localisation &nbsp;:</label>
+                <input type="text" id="loc" value="Pau"/>
+              </li>
+              <li>
+                <label for="temp">Temperature en celcius &nbsp;:</label>
+                <input type="number" id="temp" value="0" min="-50" max="50">
+              </li>
+              <li>
+                <label for="meteo">Meteo &nbsp;:</label>
+                <input type="text" id="meteo" value="Nuageux" />
+              </li>
+              <li>
+                <label for="jour">Date &nbsp;:</label>
+                <input type="date" id="jour" />
+              </li>
+            </ul>
+            <br>
+            <input type="submit" id="envoyer">
+          </form>
+    </section>
+    <hr>
+    <footer>
+        <p>Site réalisé par Clément SOUIL et Enzo AGOSTINHO</p>
+        <p>copyright - tous droits réservés</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,127 @@
+body {
+    background: white;
+}
+header {
+    background-color: rgb(212, 0, 255);
+    top : 0px;
+}
+
+header img {
+    width: 10%;
+}
+
+#sql {
+    table-layout: auto;
+    width: 100%;
+    border-collapse: collapse;
+}
+#sql td  {
+    border-bottom: 1pt solid black;
+    border-right: 1pt solid black;
+}
+
+#day {
+    display: none;
+}
+
+#selector {
+    display: flex;
+    justify-content: center;
+}
+
+#selector a {
+    padding: 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+a{
+    text-decoration: none;
+    color: red;
+}
+
+#Actuel img {
+    width: 25%;
+}
+
+.test {
+    width: 33%;
+}
+
+/* FORUM */
+
+form {
+    /* On centre le formulaire */
+    margin: 0 auto;
+    width: 500px;
+    /* Le contour du formulaire */
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+  }
+  
+form  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+form li + li {
+    margin-top: 1em;
+  }
+  
+form label {
+    /* Taille et alignement uniformes */
+    display: inline-block;
+    width: 200px;
+    text-align: right;
+  }
+  
+form input,
+form textarea {
+    /* On s'assure que les champs texte ont la même police
+       Par défaut, les zones de texte ont une police à chasse
+       fixe. */
+    font: 1em sans-serif;
+  
+    /* Taille uniforme pour des champs */
+    width: 150px;
+    box-sizing: border-box;
+  
+    /* On utilise la même bordure que pour le formulaire */
+    border: 1px solid #999;
+  }
+  
+form input:focus,
+form textarea:focus {
+    /* On rajoute une mise en avant pour les éléments avec
+       le focus. */
+    border-color: #000;
+  }
+  
+form textarea {
+    /* On aligne les textes sur plusieurs lignes avec leur
+       libellé. */
+    vertical-align: top;
+  
+    /* On fournit un peut d'espace pour saisir du texte. */
+    height: 5em;
+  
+    /* On permet de redimensionner verticalement. */
+    resize: vertical;
+  }
+  
+  .button {
+    /* On aligne les boutons avec les champs texte. */
+    padding-left: 90px; /* La même taille que les libellés */
+  }
+  
+form button {
+    /* Une marge supplémentaire représentant approximativement
+       le même espace qu'entre les libellés et les champs. */
+    margin-left: 0.5em;
+  }
+
